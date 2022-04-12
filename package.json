@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aovens-coursera-emotion-test-lib": "1.0.0",
     "@babel/core": "^7.16.0",
+    "@babel/preset-react": "7.12.1",
     "@emotion/react": "^11.1.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
@@ -48,6 +50,7 @@
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
     "semver": "^7.3.5",
+    "snowpack": "3.8.8",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",
@@ -59,9 +62,7 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "start": "snowpack dev"
   },
   "eslintConfig": {
     "extends": [
@@ -134,7 +135,25 @@
   },
   "babel": {
     "presets": [
-      "react-app"
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "edge": "17",
+            "firefox": "60",
+            "chrome": "67",
+            "safari": "11.1"
+          },
+          "useBuiltIns": "usage",
+          "corejs": "3.6.5"
+        }
+      ],
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "classic"
+        }
+      ]
     ]
   }
 }

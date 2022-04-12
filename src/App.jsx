@@ -1,6 +1,12 @@
+/** @jsx jsx */
+import {css, jsx} from '@emotion/react';
 import logo from './logo.svg';
 import './App.css';
-import Moo from './Moo';
+import Moo from 'aovens-coursera-emotion-test-lib/dist/Moo.js';
+
+const moo = css({
+  fontWeight: 600
+});
 
 function App() {
   return (
@@ -18,7 +24,7 @@ function App() {
         >
           Learn React
         </a>
-        <Moo css={{fontWeight: 600}} />
+        <Moo css={moo} />
       </header>
     </div>
   );

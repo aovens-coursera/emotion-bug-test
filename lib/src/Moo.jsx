@@ -1,7 +1,4 @@
-/** @jsx jsx */
-
 import { css } from "@emotion/react";
-import { jsx } from "@emotion/react/jsx-runtime";
 
 const styles = {
   moo: css({
